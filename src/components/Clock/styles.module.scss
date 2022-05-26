@@ -14,33 +14,24 @@
 }
 
 .hour {
-  height: 145px;
-  width: 1px;
-  background: rgb(105, 246, 105);
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-.minute {
   height: 100px;
   width: 1px;
+  background: rgb(105, 246, 105);
+}
+.minute {
+  height: 145px;
+  width: 1px;
   background: blue;
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
 }
 .second {
   height: 145px;
   width: 1px;
   background: rgb(197, 132, 146);
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translate(-50%, 0);
 }
 
 .hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
   transform-origin: bottom;
 }
