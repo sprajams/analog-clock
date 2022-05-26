@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Time from "./components/Time";
+import Clock from "./components/Clock";
 import "./App.scss";
 
 function App() {
@@ -14,9 +15,8 @@ function App() {
         setMinutes={setMinutes}
         setSeconds={setSeconds}
       />
-      <div>H: {hours}</div>
-      <div>M: {minutes}</div>
-      <div>S: {seconds}</div>
+
+      <Clock hours={hours} minutes={minutes} seconds={seconds} />
     </div>
   );
 }
