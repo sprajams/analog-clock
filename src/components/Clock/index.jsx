@@ -48,6 +48,10 @@ function Clock({ hours, minutes, seconds }) {
             transform: `translate(-50%, 0)  rotate(${secondsDeg}deg)`,
           }}
         ></div>
+        <div className={clsx(styles.clockNum, styles.twelve)}>12</div>
+        <div className={clsx(styles.clockNum, styles.three)}>3</div>
+        <div className={clsx(styles.clockNum, styles.six)}>6</div>
+        <div className={clsx(styles.clockNum, styles.nine)}>9</div>
       </div>
     </div>
   );

@@ -5,32 +5,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(231, 183, 193);
   border-radius: 50%;
+  font-size: 1.5em;
   // text-align: center;
 }
 .twelve {
   position: absolute;
-  top: 5px;
+  top: 20px;
   left: 50%;
   transform: translate(-50%, 50%);
 }
 .three {
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: 20px;
   transform: translate(-50%, -50%);
 }
 .six {
   position: absolute;
-  bottom: 5px;
+  bottom: 20px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .nine {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 20px;
   transform: translate(50%, -50%);
 }
 
@@ -48,14 +48,15 @@
   align-items: center;
   position: relative;
   padding: 5px;
+  box-shadow: 0 0 20px rgb(160, 160, 160);
   @media (min-width: 768px) {
     height: 500px;
     width: 500px;
     border: 8px solid rgb(86, 86, 86);
+    box-shadow: 0 0 32px rgb(160, 160, 160);
   }
 }
 .marking {
-  font-size: 5px;
   width: 2px;
   height: 10px;
   position: absolute;
@@ -96,11 +97,12 @@
   position: absolute;
   bottom: 50%;
   left: 50%;
-  width: 3px;
-  border-radius: 40% 40% 0 0;
+  width: 4px;
+  border-radius: 35% 35% 0 0;
   transform-origin: bottom;
   @media (min-width: 768px) {
     width: 6px;
+    border-radius: 40% 40% 0 0;
   }
   // transition: transform 0.1s;
 }
@@ -120,7 +122,7 @@
 }
 .second {
   height: 135px;
-  background: rgb(241, 197, 207);
+  background: rgb(204, 141, 155);
   width: 2px;
   border-radius: 0;
   @media (min-width: 768px) {
