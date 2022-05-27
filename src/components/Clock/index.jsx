@@ -8,7 +8,13 @@ function Clock({ hours, minutes, seconds }) {
   return (
     <div className={styles.wrap}>
       <div className={styles.outline}>
-        <div>x</div>
+        {/* <div>x</div> */}
+        <div>
+          <div className={styles.twelve}>12</div>
+          <div className={styles.three}>3</div>
+          <div className={styles.six}>6</div>
+          <div className={styles.nine}>9</div>
+        </div>
       </div>
       <div
         className={clsx(styles.hour, styles.hand)}

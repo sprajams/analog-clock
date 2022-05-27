@@ -11,8 +11,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
+// watch hands
 .hour {
   height: 100px;
   width: 1px;
@@ -24,14 +26,39 @@
   background: blue;
 }
 .second {
-  height: 145px;
+  height: 140px;
   width: 1px;
   background: rgb(197, 132, 146);
 }
-
 .hand {
   position: absolute;
   bottom: 50%;
   left: 50%;
   transform-origin: bottom;
+}
+
+// numbers on the clock
+.twelve {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.three {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translate(-50%, -50%);
+}
+.six {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.nine {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(-50%, -50%);
 }
