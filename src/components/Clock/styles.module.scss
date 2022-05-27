@@ -1,48 +1,19 @@
-.wrap {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-.outline {
-  border: 1px solid black;
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
+// numbers on the clock
+.clockNum {
+  width: 25px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  background: rgb(231, 183, 193);
+  border-radius: 50%;
+  // text-align: center;
 }
-
-// watch hands
-.hour {
-  height: 100px;
-  width: 1px;
-  background: rgb(105, 246, 105);
-}
-.minute {
-  height: 145px;
-  width: 1px;
-  background: blue;
-}
-.second {
-  height: 140px;
-  width: 1px;
-  background: rgb(197, 132, 146);
-}
-.hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: bottom;
-}
-
-// numbers on the clock
 .twelve {
   position: absolute;
   top: 5px;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 50%);
 }
 .three {
   position: absolute;
@@ -54,11 +25,105 @@
   position: absolute;
   bottom: 5px;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
 }
 .nine {
   position: absolute;
   top: 50%;
-  left: 10px;
-  transform: translate(-50%, -50%);
+  left: 5px;
+  transform: translate(50%, -50%);
+}
+
+//
+//
+//
+.clock {
+  border: 5px solid rgb(86, 86, 86);
+  border-radius: 50%;
+  margin: 20px auto;
+  height: 350px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+  @media (min-width: 768px) {
+    height: 500px;
+    width: 500px;
+    border: 8px solid rgb(86, 86, 86);
+  }
+}
+.marking {
+  font-size: 5px;
+  width: 2px;
+  height: 10px;
+  position: absolute;
+  background: rgb(216, 175, 184);
+  left: 50%;
+  top: 5px;
+  transform-origin: 50% 175px;
+  @media (min-width: 768px) {
+    transform-origin: 50% 250px;
+  }
+}
+// make every 5th marking bold
+.marking:nth-of-type(5n) {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: rgb(94, 80, 80);
+  left: 50%;
+  transform-origin: 50% 175px;
+  @media (min-width: 768px) {
+    transform-origin: 50% 250px;
+  }
+}
+.center {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(167, 134, 134);
+  filter: drop-shadow(2px 2px 6px rgb(99, 99, 99));
+  z-index: 1;
+  @media (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 3px;
+  border-radius: 40% 40% 0 0;
+  transform-origin: bottom;
+  @media (min-width: 768px) {
+    width: 6px;
+  }
+  // transition: transform 0.1s;
+}
+.hour {
+  height: 105px;
+  background: rgb(83, 28, 28);
+  @media (min-width: 768px) {
+    height: 150px;
+  }
+}
+.minute {
+  height: 150px;
+  background: rgb(134, 134, 134);
+  @media (min-width: 768px) {
+    height: 225px;
+  }
+}
+.second {
+  height: 135px;
+  background: rgb(241, 197, 207);
+  width: 2px;
+  border-radius: 0;
+  @media (min-width: 768px) {
+    height: 195px;
+  }
 }
