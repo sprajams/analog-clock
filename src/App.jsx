@@ -15,7 +15,6 @@ function App() {
         setMinutes={setMinutes}
         setSeconds={setSeconds}
       />
-
       <Clock hours={hours} minutes={minutes} seconds={seconds} />
     </div>
   );
