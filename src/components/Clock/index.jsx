@@ -52,6 +52,7 @@ function Clock({ hours, minutes, seconds }) {
         <div className={clsx(styles.clockNum, styles.three)}>3</div>
         <div className={clsx(styles.clockNum, styles.six)}>6</div>
         <div className={clsx(styles.clockNum, styles.nine)}>9</div>
+        <div className={styles.brand}>GEBO</div>
       </div>
     </div>
   );
