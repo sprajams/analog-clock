@@ -3,9 +3,9 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 function Clock({ hours, minutes, seconds }) {
-  const hoursDeg = (360 / 12) * (hours + minutes / 60 + seconds / 360);
-  const minutesDeg = (360 / 60) * (minutes + seconds / 60);
-  const secondsDeg = (360 / 60) * seconds;
+  const hoursDeg = 360 * ((hours + minutes / 60 + seconds / 3600) / 12);
+  const minutesDeg = 360 * ((minutes + seconds / 60) / 60);
+  const secondsDeg = 360 * (seconds / 60);
 
   // create 60 markings
   const [markings, setMarkings] = useState([]);
