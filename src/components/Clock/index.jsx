@@ -33,13 +33,13 @@ function Clock({ hours, minutes, seconds }) {
         <div
           className={clsx(styles.hour, styles.hand)}
           style={{
-            transform: `translate(-50%, 0)  rotate(${hoursDeg}deg) translate(-50%, 0) `,
+            transform: `translate(-50%, 0)  rotate(${hoursDeg}deg)`,
           }}
         ></div>
         <div
           className={clsx(styles.minute, styles.hand)}
           style={{
-            transform: `translate(-50%, 0)  rotate(${minutesDeg}deg) translate(-50%, 0) `,
+            transform: `translate(-50%, 0)  rotate(${minutesDeg}deg) `,
           }}
         ></div>
         <div
