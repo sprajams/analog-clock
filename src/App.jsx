@@ -9,7 +9,7 @@ function App() {
   const [seconds, setSeconds] = useState(NaN);
 
   return (
-    <div className="App">
+    <div className="outer">
       <Time
         setHours={setHours}
         setMinutes={setMinutes}
