@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Time from "./components/Time";
 import Clock from "./components/Clock";
+import Form from "./components/Form";
 import "./App.scss";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         setSeconds={setSeconds}
       />
       <Clock hours={hours} minutes={minutes} seconds={seconds} />
+      <Form />
     </div>
   );
 }
