@@ -9,6 +9,8 @@ function App() {
   const [minutes, setMinutes] = useState(NaN);
   const [seconds, setSeconds] = useState(NaN);
 
+  const [manual, setManual] = useState(false);
+
   return (
     <div className="outer">
       <Time
@@ -17,7 +19,7 @@ function App() {
         setSeconds={setSeconds}
       />
       <Clock hours={hours} minutes={minutes} seconds={seconds} />
-      <Form />
+      <Form setManual={setManual} manual={manual} />
     </div>
   );
 }
