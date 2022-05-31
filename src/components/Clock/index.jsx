@@ -1,8 +1,9 @@
 import { useEffect, useState, useMemo } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.scss";
+import { toHaveTextContent } from "@testing-library/jest-dom/dist/matchers";
 
-function Clock({ timezone, time }) {
+function Clock({ timezone, time, small, title }) {
   const adjustedTime = useMemo(() => {
     // create date with timezone
     const tzDate = new Date(
@@ -54,9 +55,9 @@ function Clock({ timezone, time }) {
     }
   }, []);
   return (
-    <div>
-      <h2>{timezone ? timezone : "Current"}</h2>
-      <div className={styles.clock}>
+    <div className={styles.wrap}>
+      <h2 className={styles.title}>{timezone ? title : "Local Time"}</h2>
+      <div className={clsx(styles.clock, small && styles.small)}>
         <div className={styles.center}></div>
         <div>{markings}</div>
         <div
