@@ -1,37 +1,39 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.scss";
 
-function Clock({ timezone }) {
-  const [hours, setHours] = useState(NaN);
-  const [minutes, setMinutes] = useState(NaN);
-  const [seconds, setSeconds] = useState(NaN);
-
-  const [time, setTime] = useState(new Date());
-  // set current time every 1 second
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(
-        timezone
-          ? new Date(new Date().toLocaleString("en-US", { timeZone: timezone }))
-          : new Date()
-      );
-    }, 1000);
-    return () => {
-      clearInterval(timer);
+function Clock({ timezone, time }) {
+  const adjustedTime = useMemo(() => {
+    // create date with timezone
+    const tzDate = new Date(
+      time.toLocaleString("en-US", { timeZone: timezone })
+    );
+    return {
+      hours: tzDate.getHours(),
+      minutes: tzDate.getMinutes(),
+      seconds: tzDate.getSeconds(),
     };
-  }, [timezone]);
+  }, [time, timezone]);
+  // const [hours, setHours] = useState(NaN);
+  // const [minutes, setMinutes] = useState(NaN);
+  // const [seconds, setSeconds] = useState(NaN);
 
   // from current time, set the current hour, minute, second
-  useEffect(() => {
-    setHours(time.getHours());
-    setMinutes(time.getMinutes());
-    setSeconds(time.getSeconds());
-  }, [setHours, setMinutes, setSeconds, time]);
+  // useEffect(() => {
+  //   setHours(time.getHours());
+  //   setMinutes(time.getMinutes());
+  //   setSeconds(time.getSeconds());
+  // }, [setHours, setMinutes, setSeconds, time]);
 
-  const hoursDeg = 360 * ((hours + minutes / 60 + seconds / 3600) / 12);
-  const minutesDeg = 360 * ((minutes + seconds / 60) / 60);
-  const secondsDeg = 360 * (seconds / 60);
+  const hoursDeg =
+    360 *
+    ((adjustedTime.hours +
+      adjustedTime.minutes / 60 +
+      adjustedTime.seconds / 3600) /
+      12);
+  const minutesDeg =
+    360 * ((adjustedTime.minutes + adjustedTime.seconds / 60) / 60);
+  const secondsDeg = 360 * (adjustedTime.seconds / 60);
 
   // create 60 markings
   const [markings, setMarkings] = useState([]);
@@ -51,16 +53,9 @@ function Clock({ timezone }) {
       });
     }
   }, []);
-
-  if (timezone) {
-    const countryName = timezone.split("/")[1];
-    console.log(countryName);
-  }
-
   return (
     <div>
       <h2>{timezone ? timezone : "Current"}</h2>
-
       <div className={styles.clock}>
         <div className={styles.center}></div>
         <div>{markings}</div>
@@ -89,7 +84,8 @@ function Clock({ timezone }) {
         <div className={styles.brand}>
           <div>GEBO</div>
           <div>
-            {hours} : {minutes} : {seconds}
+            {adjustedTime.hours} : {adjustedTime.minutes} :
+            {adjustedTime.seconds}
           </div>
         </div>
       </div>
