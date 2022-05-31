@@ -55,8 +55,8 @@
   padding: 5px;
   box-shadow: 0 0 20px rgb(160, 160, 160);
   @media (min-width: 768px) {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     border: 8px solid rgb(86, 86, 86);
     box-shadow: 0 0 32px rgb(160, 160, 160);
   }
@@ -70,7 +70,7 @@
   top: 5px;
   transform-origin: 50% 175px;
   @media (min-width: 768px) {
-    transform-origin: 50% 250px;
+    transform-origin: 50% 200px;
   }
 }
 // make every 5th marking bold
@@ -82,7 +82,7 @@
   left: 50%;
   transform-origin: 50% 175px;
   @media (min-width: 768px) {
-    transform-origin: 50% 250px;
+    transform-origin: 50% 200px;
   }
 }
 .center {
@@ -91,7 +91,7 @@
   border-radius: 50%;
   background: rgb(167, 134, 134);
   filter: drop-shadow(2px 2px 6px rgb(99, 99, 99));
-  z-index: 1;
+  z-index: 4;
   @media (min-width: 768px) {
     width: 20px;
     height: 20px;
@@ -114,15 +114,17 @@
 .hour {
   height: 105px;
   background: rgb(83, 28, 28);
+  z-index: 1;
   @media (min-width: 768px) {
-    height: 150px;
+    height: 125px;
   }
 }
 .minute {
   height: 150px;
   background: rgb(134, 134, 134);
+  z-index: 2;
   @media (min-width: 768px) {
-    height: 225px;
+    height: 170px;
   }
 }
 .second {
@@ -130,8 +132,9 @@
   background: rgb(204, 141, 155);
   width: 2px;
   border-radius: 0;
+  z-index: 3;
   @media (min-width: 768px) {
-    height: 195px;
+    height: 160px;
   }
 }
 .brand {
