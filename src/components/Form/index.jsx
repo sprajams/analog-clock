@@ -1,13 +1,11 @@
-import { useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import styles from "./styles.module.scss";
 
-function Form({ setManual, manual }) {
-  const [time, setTime] = useState("");
-
+function Form({ setManual, manual, setCustomTime, customTime }) {
   const onChange = (e) => {
-    setTime(e.target.value);
+    setCustomTime(e.target.value);
   };
 
   return (
@@ -28,9 +26,10 @@ function Form({ setManual, manual }) {
           type="time"
           id="time"
           name="time"
-          value={time}
+          value={customTime}
           onChange={onChange}
           required
+          className={styles.input}
         />
       ) : null}
     </div>

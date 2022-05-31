@@ -137,6 +137,8 @@
 .brand {
   position: absolute;
   top: 75px;
+  z-index: -1;
+  text-align: center;
   color: rgb(193, 155, 163);
   @media (min-width: 768px) {
     top: 100px;
