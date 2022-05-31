@@ -51,6 +51,12 @@ function Clock({ timezone }) {
       });
     }
   }, []);
+
+  if (timezone) {
+    const countryName = timezone.split("/")[1];
+    console.log(countryName);
+  }
+
   return (
     <div>
       <h2>{timezone ? timezone : "Current"}</h2>

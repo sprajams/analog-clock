@@ -30,6 +30,9 @@ function App() {
       </div>
       <Clock />
       <Clock timezone={`America/New_York`} />
+      <Clock timezone={`Europe/London`} />
+      <Clock timezone={`Asia/Bangkok`} />
+
       {/* CUSTOM TIME */}
       {/* <div>
         <Form
