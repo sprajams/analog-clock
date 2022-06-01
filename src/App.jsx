@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Clock from "./components/Clock";
+import Form from "./components/Form";
 import "./App.scss";
 
 function App() {
@@ -15,30 +16,44 @@ function App() {
     };
   }, []);
 
+  const [manual, setManual] = useState(false);
+  const [customTime, setCustomTime] = useState("");
+
   return (
     <div className="outer">
       {/* CURRENT TIME */}
       <Clock time={time} />
-      <div className="smallGroup">
-        <Clock
-          time={time}
-          title={`New York, US`}
-          timezone={`America/New_York`}
-          small
-        />
-        <Clock
-          time={time}
-          title={`London, UK`}
-          timezone={`Europe/London`}
-          small
-        />
-        <Clock
-          time={time}
-          title={`Bangkok, TH`}
-          timezone={`Asia/Bangkok`}
-          small
-        />
-      </div>
+      <Form
+        setManual={setManual}
+        manual={manual}
+        setCustomTime={setCustomTime}
+        customTime={customTime}
+      />
+
+      {manual ? (
+        <Clock time={customTime} />
+      ) : (
+        <div className="smallGroup">
+          <Clock
+            time={time}
+            title={`New York, US`}
+            timezone={`America/New_York`}
+            small
+          />
+          <Clock
+            time={time}
+            title={`London, UK`}
+            timezone={`Europe/London`}
+            small
+          />
+          <Clock
+            time={time}
+            title={`Bangkok, TH`}
+            timezone={`Asia/Bangkok`}
+            small
+          />
+        </div>
+      )}
     </div>
   );
 }

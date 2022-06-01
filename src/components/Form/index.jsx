@@ -3,21 +3,26 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import styles from "./styles.module.scss";
 
-function Form({ setManual, manual, setCustomTime, customTime }) {
+function Form({ setManual, manual, setCustomTime }) {
   const onChange = (e) => {
-    setCustomTime(e.target.value);
+    const arr = e.target.value.split(":");
+    const [hours, minutes] = arr;
+    const newTime = new Date();
+    newTime.setHours(hours);
+    newTime.setMinutes(minutes);
+    newTime.setSeconds(0);
+    setCustomTime(newTime);
   };
-
   return (
     <div>
       <div>
         <FormGroup>
           <FormControlLabel
-            control={<Switch defaultChecked />}
+            control={<Switch />}
             onChange={() => {
               setManual(!manual);
             }}
-            label={manual ? "Custom Time" : "Current Time"}
+            label={"Custom Time"}
           />
         </FormGroup>
       </div>
@@ -26,7 +31,6 @@ function Form({ setManual, manual, setCustomTime, customTime }) {
           type="time"
           id="time"
           name="time"
-          value={customTime}
           onChange={onChange}
           required
           className={styles.input}

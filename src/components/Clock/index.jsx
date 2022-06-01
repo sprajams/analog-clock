@@ -1,30 +1,21 @@
 import { useEffect, useState, useMemo } from "react";
 import clsx from "clsx";
 import styles from "./styles.module.scss";
-import { toHaveTextContent } from "@testing-library/jest-dom/dist/matchers";
 
 function Clock({ timezone, time, small, title }) {
   const adjustedTime = useMemo(() => {
     // create date with timezone
-    const tzDate = new Date(
-      time.toLocaleString("en-US", { timeZone: timezone })
+    const timeDate = new Date(time);
+    const timeDateTz = new Date(
+      timeDate.toLocaleString("en-US", { timeZone: timezone })
     );
+
     return {
-      hours: tzDate.getHours(),
-      minutes: tzDate.getMinutes(),
-      seconds: tzDate.getSeconds(),
+      hours: timeDateTz.getHours(),
+      minutes: timeDateTz.getMinutes(),
+      seconds: timeDateTz.getSeconds(),
     };
   }, [time, timezone]);
-  // const [hours, setHours] = useState(NaN);
-  // const [minutes, setMinutes] = useState(NaN);
-  // const [seconds, setSeconds] = useState(NaN);
-
-  // from current time, set the current hour, minute, second
-  // useEffect(() => {
-  //   setHours(time.getHours());
-  //   setMinutes(time.getMinutes());
-  //   setSeconds(time.getSeconds());
-  // }, [setHours, setMinutes, setSeconds, time]);
 
   const hoursDeg =
     360 *
