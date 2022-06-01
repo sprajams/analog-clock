@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   const [manual, setManual] = useState(false);
-  const [customTime, setCustomTime] = useState("");
+  const [customTime, setCustomTime] = useState(new Date());
 
   return (
     <div className="outer">
@@ -28,10 +28,11 @@ function App() {
         manual={manual}
         setCustomTime={setCustomTime}
         customTime={customTime}
+        time={time}
       />
 
       {manual ? (
-        <Clock time={customTime} />
+        <Clock time={customTime} small />
       ) : (
         <div className="smallGroup">
           <Clock
