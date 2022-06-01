@@ -3,7 +3,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import styles from "./styles.module.scss";
 
-function Form({ setManual, manual, setCustomTime }) {
+function TimeInput({ setManual, manual, setCustomTime }) {
   const onChange = (e) => {
     const arr = e.target.value.split(":");
     const [hours, minutes] = arr;
@@ -40,4 +40,4 @@ function Form({ setManual, manual, setCustomTime }) {
   );
 }
 
-export default Form;
+export default TimeInput;

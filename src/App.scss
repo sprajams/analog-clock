@@ -5,9 +5,3 @@
   flex-direction: column;
   margin: 15px 20px;
 }
-.smallGroup {
-  @media (min-width: 768px) {
-    margin-top: 10px;
-    display: flex;
-  }
-}

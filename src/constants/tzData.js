@@ -1,12 +1,12 @@
-const timezones = [
-  {
-    offset: "GMT-12:00",
-    name: "Etc/GMT-12",
-  },
-  {
-    offset: "GMT-11:00",
-    name: "Etc/GMT-11",
-  },
+const tzData = [
+  // {
+  //   offset: "GMT-12:00",
+  //   name: "Etc/GMT-12",
+  // },
+  // {
+  //   offset: "GMT-11:00",
+  //   name: "Etc/GMT-11",
+  // },
   {
     offset: "GMT-11:00",
     name: "Pacific/Midway",
@@ -373,4 +373,4 @@ const timezones = [
   },
 ];
 
-export default timezones;
+export default tzData;
