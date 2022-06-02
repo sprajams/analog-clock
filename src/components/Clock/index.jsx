@@ -47,7 +47,7 @@ function Clock({ timezone, time, small, title }) {
   }, []);
   return (
     <div className={styles.wrap}>
-      <h2 className={styles.title}>{timezone ? title : "Local Time"}</h2>
+      <h2 className={styles.title}>{timezone ? title : null}</h2>
       <div className={clsx(styles.clock, small && styles.small)}>
         <div className={styles.center}></div>
         <div>{markings}</div>

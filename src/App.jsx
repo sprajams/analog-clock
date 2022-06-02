@@ -27,8 +27,8 @@ function App() {
   ]);
   return (
     <div className="outer">
-      {/* CURRENT TIME */}
-
+      {/* main clock to toggle between Local and set Custom Time */}
+      <h1> {manual ? `Custom` : `Local`} Time</h1>
       <Clock time={manual ? customTime : time} />
       <TimeInput
         setManual={setManual}
