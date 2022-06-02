@@ -29,7 +29,7 @@ function App() {
     <div className="outer">
       {/* CURRENT TIME */}
 
-      {manual ? <Clock time={customTime} /> : <Clock time={time} />}
+      <Clock time={manual ? customTime : time} />
       <TimeInput
         setManual={setManual}
         manual={manual}
@@ -38,11 +38,13 @@ function App() {
         time={time}
       />
 
-      {manual ? null : (
-        <div className="smallGroup">
-          <Timezones time={time} setArrTz={setArrTz} arrTz={arrTz} />
-        </div>
-      )}
+      <div className="smallGroup">
+        <Timezones
+          time={manual ? customTime : time}
+          setArrTz={setArrTz}
+          arrTz={arrTz}
+        />
+      </div>
     </div>
   );
 }
