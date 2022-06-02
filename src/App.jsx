@@ -20,6 +20,11 @@ function App() {
   const [manual, setManual] = useState(false);
   const [customTime, setCustomTime] = useState(new Date());
 
+  const [arrTz, setArrTz] = useState([
+    `America/New_York`,
+    `Europe/London`,
+    `Asia/Bangkok`,
+  ]);
   return (
     <div className="outer">
       {/* CURRENT TIME */}
@@ -35,7 +40,7 @@ function App() {
 
       {manual ? null : (
         <div className="smallGroup">
-          <Timezones time={time} />
+          <Timezones time={time} setArrTz={setArrTz} arrTz={arrTz} />
         </div>
       )}
     </div>

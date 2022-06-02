@@ -1,6 +1,21 @@
 .container {
   @media (min-width: 768px) {
-    margin-top: 10px;
-    display: flex;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
   }
+}
+.selectBox {
+  width: 300px;
+}
+.inputWrap {
+  display: flex;
+  justify-content: end;
+}
+.inputButton {
+  width: 56px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
 }
