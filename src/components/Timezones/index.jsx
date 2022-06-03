@@ -41,8 +41,9 @@ function Timezones({ time, setArrTz, arrTz }) {
               label="Timezone"
             >
               {tzData.map((x) => {
+                const disabled = arrTz.includes(x.name);
                 return (
-                  <MenuItem value={x.name} key={x.name}>
+                  <MenuItem value={x.name} key={x.name} disabled={disabled}>
                     {x.name}
                   </MenuItem>
                 );

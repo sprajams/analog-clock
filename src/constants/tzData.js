@@ -213,7 +213,7 @@ const tzData = [
   },
   {
     offset: "GMT+03:00",
-    name: "Asia/Riyadh89",
+    name: "Asia/Riyadh",
   },
   {
     offset: "GMT+03:00",
